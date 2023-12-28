@@ -18,19 +18,18 @@ public final class CommandSpawn extends BaseCommand {
         final var plugin = MicroSpawnPlugin.getInstance();
 
         plugin.getSpawnLocation()
-              .ifPresentOrElse(spawn -> sender.teleportAsync(spawn)
-                                              .whenComplete((teleported, error) -> {
-                                                  if (teleported) {
-                                                      Messages.TELEPORT_SUCCESS.send(sender);
-                                                  } else {
-                                                      Messages.TELEPORT_FAILURE.send(sender);
+              .ifPresentOrElse(spawn -> sender.teleportAsync(spawn).whenComplete((teleported, error) -> {
+                                   if (teleported) {
+                                       Messages.TELEPORT_SUCCESS.send(sender);
+                                   } else {
+                                       Messages.TELEPORT_FAILURE.send(sender);
 
-                                                      if (error != null) {
-                                                          MicroSpawnPlugin.logger()
-                                                                          .error("failed to teleport player[{}]", sender.getName(), error);
-                                                      }
-                                                  }
-                                              }),
+                                       if (error != null) {
+                                           MicroSpawnPlugin.logger()
+                                                           .error("failed to teleport [{}]", sender.getName(), error);
+                                       }
+                                   }
+                               }),
                                () -> Messages.LOCATION_NOT_SET.send(sender));
     }
 
