@@ -1,0 +1,15 @@
+settings:
+  force_spawn_on_join: false
+
+messages:
+  teleport:
+    success: "&aTeleported to spawn!"
+    failure: "&cCould not teleport to spawn."
+  location:
+    updated: "&7Spawn location set to&8:&r %location%"
+    removed: "&7Removed spawn location&8:&r %location%"
+    not_set: "&cNo spawn location is set."
+  force_spawn_on_join:
+    enabled: "&aNow forcing spawn on join!"
+    disabled: "&cNo longer forcing spawn on join!"
+  config_reloaded: "&aReloaded plugin config!"

@@ -1,0 +1,10 @@
+name: "uSpawn"
+main: "com.sxtanna.mc.micro.MicroSpawnPlugin"
+
+version: "$version"
+authors: [ "Sxtanna" ]
+website: "https://www.sxtanna.com"
+
+api-version: "1.20"
+
+prefix: "μ"
